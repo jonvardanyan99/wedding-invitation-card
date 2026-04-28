@@ -1,4 +1,4 @@
-import '@fontsource-variable/playfair-display/wght.css';
+import '@fontsource-variable/noto-serif-armenian/wght.css';
 import React, { useState, useEffect } from 'react';
 
 import weddingImg from '../../assets/images/wedding-1.jpg';

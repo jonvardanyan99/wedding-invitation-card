@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  font-family: 'Playfair Display Variable', serif;
+  font-family: 'Noto Serif Armenian Variable', serif;
 }
 
 @theme {
