@@ -1,8 +1,7 @@
-import '@fontsource-variable/playfair-display/wght.css';
 import React from 'react';
 
-import { Header } from './components/Header';
+import { Page } from './components/Page';
 
 export const App: React.FC = () => {
-  return <Header />;
+  return <Page />;
 };

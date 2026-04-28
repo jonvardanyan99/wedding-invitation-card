@@ -1,0 +1,42 @@
+import '@fontsource-variable/playfair-display/wght.css';
+import React, { useState, useEffect } from 'react';
+
+import weddingImg from '../../assets/images/wedding-1.jpg';
+import curtainWhiteImg from '../../assets/images/curtain-white-compressed.jpg';
+import arrowDownIcon from '../../assets/icons/arrow-down.png';
+import { Header } from '../Header';
+
+export const Page: React.FC = () => {
+  const [isPageReady, setIsPageReady] = useState(false);
+
+  useEffect(() => {
+    const imagestoLoad = [weddingImg, curtainWhiteImg, arrowDownIcon];
+    let loadedCount = 0;
+
+    imagestoLoad.forEach((image) => {
+      const img = new Image();
+
+      img.src = image;
+      img.onload = () => {
+        loadedCount++;
+
+        if (loadedCount === imagestoLoad.length) {
+          setIsPageReady(true);
+        }
+      };
+    });
+  }, []);
+
+  if (!isPageReady) {
+    return null;
+  }
+
+  return (
+    <div>
+      <Header />
+      <div style={{ backgroundImage: `url(${curtainWhiteImg})` }} className="fixed top-0 left-0 w-[50%] h-dvh bg-cover z-4 animate-curtain-open origin-left" />
+      <div style={{ backgroundImage: `url(${curtainWhiteImg})` }} className="fixed top-0 right-0 w-[50%] h-dvh bg-cover z-4 animate-curtain-open origin-right" />
+      <div style={{ backgroundImage: `url(${weddingImg})` }} className="fixed top-0 left-0 w-full h-dvh bg-cover bg-center z-1" />
+    </div>
+  )
+};
