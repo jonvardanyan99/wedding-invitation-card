@@ -11,6 +11,7 @@ body {
 @theme {
   --animate-curtain-open: curtain-open 3s forwards;
   --animate-text-appear: text-appear forwards;
+  --animate-arrow-move: arrow-move 2s ease-in-out infinite;
 
   @keyframes curtain-open {
     0% {
@@ -37,6 +38,20 @@ body {
 
     100% {
       transform: scaleY(1);
+    }
+  }
+
+  @keyframes arrow-move {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(10px);
+    }
+
+    100% {
+      transform: translateY(0);
     }
   }
 
